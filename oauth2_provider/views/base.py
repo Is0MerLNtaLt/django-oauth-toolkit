@@ -195,7 +195,7 @@ class AuthorizationView(BaseAuthorizationView, FormView):
                         return self.redirect(uri, application, token)
 
         except OAuthToolkitError as error:
-            return self.error_response(error, application)
+            return self.error_response(error, application=application)
 
         return self.render_to_response(self.get_context_data(**kwargs))
 
